@@ -41,10 +41,10 @@ void loop() {
 
     switch (temp) {
       case 's':
-        handleServoCommand();
+        closeServoArm();
         break;
       case 'x':
-        handleMotorCommand();
+        letsGO();
         break;
       default:
         break;
@@ -56,7 +56,7 @@ void loop() {
 }
 
 
-void handleServoCommand(){
+void closeServoArm(){
     for (pos = 20; pos >= 0; pos -= 1) { // goes from 0 degrees to 180 degrees
       // in steps of 1 degree
       //myservo1.write(pos);    
@@ -64,9 +64,17 @@ void handleServoCommand(){
       delay(100);                       // waits 15ms for the servo to reach the position
     }
 }
-void handleMotorCommand(){
-    myMotor1->setSpeed(1000);
-    myMotor2->setSpeed(1000);
+void letsGO(){
+    for (pos = 0; pos <= 20; pos += 1) { // goes from 0 degrees to 180 degrees
+          // in steps of 1 degree
+          //myservo1.write(pos);    
+          myservo2.write(pos);           // tell servo to go to position in variable 'pos'
+          delay(100);                       // waits 15ms for the servo to reach the position
+     }
+    
+     
+    myMotor1->setSpeed(2000);
+    myMotor2->setSpeed(2000);
     myMotor2->run(FORWARD);
     myMotor1->run(FORWARD);
     delay(5000);
