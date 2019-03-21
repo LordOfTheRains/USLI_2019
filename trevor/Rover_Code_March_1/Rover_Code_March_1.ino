@@ -64,10 +64,10 @@ void loop() {
       case '%':
         openServoArm();
         break;
-      case 's':
+      case '#':
         closeServoArm();
         break;
-      case 'x':
+      case '&':
         letsGO();
         break;
       default:

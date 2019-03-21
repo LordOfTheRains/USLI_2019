@@ -23,7 +23,7 @@ void loop() {
   int servoOPressed =  digitalRead(SERVOoBTN);
   if (startPressed == HIGH ) {//button pressed
    
-    Serial.println('x'); 
+    Serial.println('&'); 
     digitalWrite(STRLED,HIGH);
     delay(1000);
   }else{
@@ -31,7 +31,7 @@ void loop() {
   }
   if (servoCPressed == HIGH ) {//button pressed
    
-    Serial.println('s'); 
+    Serial.println('#'); 
     digitalWrite(SERVOcLED,HIGH);
     delay(1000);
   }else{
